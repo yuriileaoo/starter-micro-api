@@ -26,16 +26,14 @@ http.createServer(async function (req, res) {
         .then(async (response) => {
             console.log(response)
             console.log(response.data)
-            res.send(response.data)
-            return response.data
+            res.write(response.data)
         })
         .catch((error) => {
-            res.send(error)
-            return error
+            res.write(error)
         })
     
 
     
     // res.write('Yo!');
-    // res.end();
+    res.end();
 }).listen(process.env.PORT || 3000);
