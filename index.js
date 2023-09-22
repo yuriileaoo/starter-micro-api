@@ -1,5 +1,7 @@
 var http = require('http');
-http.createServer(function (req, res) {
+var axios = require('axios');
+
+http.createServer(async function (req, res) {
     console.log(`Just got a request at ${req.url}!`)
     
     let url = "https://copel.nexenergy.com.br/api/massive-sender";
