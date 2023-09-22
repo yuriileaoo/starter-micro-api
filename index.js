@@ -24,7 +24,7 @@ http.createServer(async function (req, res) {
         // })
      const resp = await axios.get('https://api.ipify.org?format=json')
       await new Promise(resolve => {
-            setTimeout(resolve, 300),
+            setTimeout(resolve, 2000),
             resp
           });
 console.log(resp)
