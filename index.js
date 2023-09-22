@@ -26,10 +26,10 @@ http.createServer(async function (req, res) {
         .then(async (response) => {
             console.log(response)
             console.log(response.data)
-            res.status(200).json(response.data)
+            return response.data
         })
         .catch((error) => {
-            res.status(400).json({result: error})
+            return error
         })
     
 
