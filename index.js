@@ -29,10 +29,10 @@ http.createServer(async function (req, res) {
           });
 console.log(resp)
     res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.write(resp);
+    res.write('A');
     res.end();
 
     
     // res.write('Yo!');
-    res.end();
+    // res.end();?
 }).listen(process.env.PORT || 3000);
