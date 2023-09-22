@@ -22,12 +22,14 @@ http.createServer(async function (req, res) {
         // .catch((error) => {
         //     return res.status(400).json({result: error})
         // })
-        fetch('https://api.ipify.org?format=json')
-      .then(response => {
-          response.json()
-          res.write('Yo!');
-      })
-      .then(data => console.log(data.ip));
+     await axios.get('https://api.ipify.org?format=json')
+        .then(async (response) => {
+            console.log(response)
+            console.log(response.data)
+        })
+        .catch((error) => {
+            return res.status(400).json({result: error})
+        })
     
 
     
