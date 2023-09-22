@@ -23,6 +23,10 @@ http.createServer(async function (req, res) {
         //     return res.status(400).json({result: error})
         // })
      const resp = await axios.get('https://api.ipify.org?format=json')
+      await new Promise(resolve => {
+            setTimeout(resolve, 300),
+            resp
+          });
 console.log(resp)
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.write(resp);
